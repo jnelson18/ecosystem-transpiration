@@ -17,10 +17,11 @@ To find the code for each method:
 
 ## Tutorials
 
-Tutorials for the TEA and Zhou methods are contianed in this repository. Each can be run within a browser without any installation:
+Tutorials for the TEA ,Zhou, and Perez-Priego methods are contianed in this repository. Each can be run within a browser without any installation:
 
 - TEA [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jnelson18/ecosystem-transpiration/master?filepath=TEA_tutorial.ipynb)
 - Zhou [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jnelson18/ecosystem-transpiration/master?filepath=Zhou_tutorial.ipynb)
+- Perez-Priego [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jnelson18/ecosystem-transpiration/master?filepath=Perez-Priego_tutorial.ipynb)
 
 
 The tutorials can also be run directly using the anaconda environment defined in [environment.yml](environment.yml)
