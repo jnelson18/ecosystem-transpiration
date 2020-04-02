@@ -204,12 +204,12 @@ def VPD_to_RH(VPD, TA, formula="Sonntag_1990"):
     - Foken, T, 2008: Micrometeorology. Springer, Berlin, Germany.
     """
     esat, _ = esat_slope(TA, formula=formula)
-    RH   = 1 - VPD/esat
+    RH      = 1 - VPD/esat
     return(RH)
 
 def RH_to_VPD(RH, TA, formula="Sonntag_1990"):
     """RH_to_VPD(RH, TA, formula="Sonntag_1990")
-
+  
     Conversion between relative humidity (RH) and vapor pressure deficit (VPD).
 
     Parameters
@@ -221,8 +221,8 @@ def RH_to_VPD(RH, TA, formula="Sonntag_1990"):
 
     Returns
     -------
-    RH : list or list like
-        Relative humidity (-)
+    VPD : list or list like
+        Vapor pressure deficit (kPa)
 
     References
     ----------
@@ -232,7 +232,7 @@ def RH_to_VPD(RH, TA, formula="Sonntag_1990"):
         warnings.warn("relative humidity (rH) has to be between 0 and 1.")
 
     esat, _ = esat_slope(TA, formula=formula)
-    VPD  <- esat - RH*esat
+    VPD     = esat - RH*esat
     return(VPD)
 
 def psychrometric_constant(TA, PA):
