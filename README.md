@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/223398945.svg)](https://zenodo.org/badge/latestdoi/223398945)
+
 # ecosystem-transpiration
 Code and examples of how to estimate transpiration from eddy covariance data.
 
