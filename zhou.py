@@ -182,7 +182,7 @@ def zhou_part(ET, GxV, uWUEa_Mask, uWUEp_Mask, nStepsPerDay=48, hourlyMask=None,
 
     References
     ----------
-    - Foken, T, 2008: Micrometeorology. Springer, Berlin, Germany.
+    - Zhou, S., Yu, B., Zhang, Y., Huang, Y., & Wang, G. (2016). Partitioning evapotranspiration based on the concept of underlying water use efficiency: ET PARTITIONING. Water Resources Research, 52(2), 1160–1175. https://doi.org/10.1002/2015WR017766
     '''
     if (hourlyMask is None) and (nStepsPerDay==48):
             hourlyMask = np.ones(ds.LE.shape).astype(bool)
