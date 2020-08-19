@@ -45,3 +45,10 @@ In order to run the Pérez-Priego method, the R packages found in [install.R](in
 Rscript install.R
 ```
 
+### Accessing existing data
+
+Data from FLUXNET associated with the accompanying manuscript can be found in [the Zenodo repository](https://zenodo.org/record/3978408#.Xz0Yj0vVJ_U).
+
+If you are unfamiliar with netcdf formats, the data can be exported to a csv using the ExportTutorial.ipynb
+
+If you are unfamiliar with Jupyter notebooks (.ipynb), get started [here](https://jupyter.readthedocs.io/en/latest/running.html#running).
