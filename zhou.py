@@ -97,7 +97,7 @@ def quantreg(x,y,PolyDeg=1,rho=0.95,weights=None):
        if PolyDeg == 0:
            return x*beta
        else:
-           return polyval(x, beta)
+           return np.polyval(beta, x)
 
     N_coefficients=PolyDeg+1
 
