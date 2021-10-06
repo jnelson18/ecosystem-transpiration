@@ -1,4 +1,4 @@
-repo = "https://cloud.r-project.org"
+repo = "http://cran.rstudio.com/"
 install.packages("devtools", repos=repo)
 install.packages("FME", repos=repo)
 install.packages("bigleaf", repos=repo)
