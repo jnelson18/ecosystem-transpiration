@@ -1,7 +1,6 @@
 name: ecosystem-transpiration
 channels:
   - conda-forge
-  - jnelson18
 dependencies:
   - python
   - numpy
@@ -9,9 +8,10 @@ dependencies:
   - xarray
   - scikit-learn
   - matplotlib
-  - transpiration_estimation_algorithm
   - sympy
   - netcdf4
   - jupyter
   - r-base=3.6
+  - r-fme
+  - r-devtools
   - r-irkernel
