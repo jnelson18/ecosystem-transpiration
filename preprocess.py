@@ -18,30 +18,30 @@ def is_number_tryexcept(s):
     except ValueError:
         return s
 
-def get_metadata(site):
-   """ Extracts the site metadata from http://sites.fluxdata.org/{site}/."""
-   from bs4 import BeautifulSoup
-   import requests
-   page = requests.get("http://sites.fluxdata.org/{site}/".format(site = site))
-   soup = BeautifulSoup(page.content, 'html.parser')
-   metadata = {}
-   maininfo = soup.findAll("table", {"class": "maininfo"})[0]
-   table    = maininfo.find_all('tr')
-   rows     = [r for r in table if len(r)>1]
-   metadata = {}
-   for r in rows:
-       for i in r.children:
-           if i.attrs['class'][0]=='label':
-               label = i.get_text().rstrip(':')
-           elif i.attrs['class'][0]=='value':
-               value = i.get_text()
-           else:
-               raise RuntimeError('unknown line from web info table: '+"http://sites.fluxdata.org/{site}/".format(site = site))
-       metadata[label] = is_number_tryexcept(value.strip())
-   metadata['contact_name']  = metadata['Tower Team'].split('\n')[0][4:].split(' <')[0]
-   metadata['contact_email'] = metadata['Tower Team'].split('\n')[0][4:].split(' <')[1].split('>')[0]
-   metadata['dataset']  = 'FLUXNET2015'
-   return(metadata)
+#def get_metadata(site):
+#   """ Extracts the site metadata from http://sites.fluxdata.org/{site}/."""
+#   from bs4 import BeautifulSoup
+#   import requests
+#   page = requests.get("http://sites.fluxdata.org/{site}/".format(site = site))
+#   soup = BeautifulSoup(page.content, 'html.parser')
+#   metadata = {}
+#   maininfo = soup.findAll("table", {"class": "maininfo"})[0]
+#   table    = maininfo.find_all('tr')
+#   rows     = [r for r in table if len(r)>1]
+#   metadata = {}
+#   for r in rows:
+#       for i in r.children:
+#           if i.attrs['class'][0]=='label':
+#               label = i.get_text().rstrip(':')
+#           elif i.attrs['class'][0]=='value':
+#               value = i.get_text()
+#           else:
+#               raise RuntimeError('unknown line from web info table: '+"http://sites.fluxdata.org/{site}/".format(site = site))
+#       metadata[label] = is_number_tryexcept(value.strip())
+#   metadata['contact_name']  = metadata['Tower Team'].split('\n')[0][4:].split(' <')[0]
+#   metadata['contact_email'] = metadata['Tower Team'].split('\n')[0][4:].split(' <')[1].split('>')[0]
+#   metadata['dataset']  = 'FLUXNET2015'
+#   return(metadata)
 
 def build_dataset(_file):
     """build_dataset(_file)
@@ -73,11 +73,11 @@ def build_dataset(_file):
             ds[var] = ds.TA_F_MDS * np.nan
     ds = ds[list(BerkeleyConversion.keys())].rename(BerkeleyConversion)
     ds['time'] = ds.time.values.astype('datetime64[m]').astype('datetime64[ns]')
-    try:
-        metadata = get_metadata(site)
-        ds = ds.assign_attrs(**metadata)
-    except Exception as e:
-        warnings.warn('Metadata could not be loaded and will not be included in the dataset')
+    #try:
+    #    metadata = get_metadata(site)
+    #    ds = ds.assign_attrs(**metadata)
+    #except Exception as e:
+    #    warnings.warn('Metadata could not be loaded and will not be included in the dataset')
 
     if np.isnan(ds.H.values[::2]).all():
         ds.attrs['agg_code'] = 'HR'
