@@ -11,7 +11,7 @@ dependencies:
   - matplotlib
   - sympy
   - netcdf4
-  - transpiration_estimation_algorithm=v1.09
+  - transpiration_estimation_algorithm=v1.10
   - jupyter
   - r-base=3.6
   - r-fme
